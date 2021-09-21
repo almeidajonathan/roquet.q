@@ -2,9 +2,9 @@
   "name": "roquetq",
   "version": "1.0.0",
   "description": "Projeto desenvolvido para gerenciar perguntas anônimas de usuários ao dono da sala. Projeto desenvolvido na semana NLW da Rocketseat na missão discover",
-  "main": "index.js",
+  "main": "src/server.js",
   "scripts": {
-    "start": "node src/server.js"
+    "start": "nodemon ."
   },
   "repository": {
     "type": "git",

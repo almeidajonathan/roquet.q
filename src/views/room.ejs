@@ -14,7 +14,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans&family=Poppins:wght@500;700&display=swap"
         rel="stylesheet">
-
+    <script src="scripts/main.js" defer type="module"></script>
     <title>room</title>
 </head>
 
@@ -64,12 +64,12 @@
                             </div>
                         </div>
                         <div class="actions">
-                            <a href="#">
-                                <img class="check" src="/assets/check.svg" alt="marcar como lida">
+                            <a class="check" href="#">
+                                <img src="/assets/check.svg" alt="marcar como lida">
                                 Marcar como lida
                             </a>
-                            <a href="#">
-                                <img class="delete" src="/assets/trash.svg" alt="excluir">
+                            <a class="delete" href="#">
+                                <img src="/assets/trash.svg" alt="excluir">
                                 Excluir
                             </a>
                         </div>
@@ -85,12 +85,12 @@
                             </div>
                         </div>
                         <div class="actions">
-                            <a href="#">
-                                <img class="check" src="/assets/check.svg" alt="marcar como lida">
+                            <a class="check" href="#">
+                                <img src="/assets/check.svg" alt="marcar como lida">
                                 Marcar como lida
                             </a>
-                            <a href="#">
-                                <img class="delete" src="/assets/trash.svg" alt="excluir">
+                            <a class="delete" href="#">
+                                <img src="/assets/trash.svg" alt="excluir">
                                 Excluir
                             </a>
                         </div>
@@ -107,12 +107,12 @@
                             </div>
                         </div>
                         <div class="actions">
-                            <a href="#">
-                                <img class="check" src="/assets/check.svg" alt="marcar como lida">
+                            <a class="check" href="#">
+                                <img src="/assets/check.svg" alt="marcar como lida">
                                 Marcar como lida
                             </a>
-                            <a href="#">
-                                <img class="delete" src="/assets/trash.svg" alt="excluir">
+                            <a class="delete" href="#">
+                                <img src="/assets/trash.svg" alt="excluir">
                                 Excluir
                             </a>
                         </div>
@@ -129,8 +129,8 @@
                             </div>
                         </div>
                         <div class="actions">
-                            <a href="#">
-                                <img class="delete" src="/assets/trash.svg" alt="excluir">
+                            <a class="delete" href="#">
+                                <img  src="/assets/trash.svg" alt="excluir">
                                 Excluir
                             </a>
                         </div>
@@ -145,11 +145,11 @@
         <div class="modal">
             <h2>Excluir pergunta</h2>
             <p>Tem certeza que deseja excluir esta pergunta?</p>
-            <form action="#">
+            <form action="#" method="POST">
                 <label for="password" class="sr-only">Digite a senha da sala</label>
                 <input type="password" name="password" placeholder="digite a senha da sala">
                 <div class="buttons">
-                    <div class="button gray">Cancelar</div>
+                    <div class="button gray cancel">Cancelar</div>
                     <button class="red">Sim, excluir</button>
                 </div>
             </form>

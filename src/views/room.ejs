@@ -6,9 +6,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- CSS -->
-    <link rel="stylesheet" href="styles/global.css">
-    <link rel="stylesheet" href="styles/room.css">
-    <link rel="stylesheet" href="styles/modal.css">
+    <link rel="stylesheet" href="/styles/global.css">
+    <link rel="stylesheet" href="/styles/room.css">
+    <link rel="stylesheet" href="/styles/modal.css">
     <!-- FONTS -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -22,10 +22,10 @@
     <div class="content" id="room">
         <header>
             <a href="">
-                <img src="assets/logo.svg" alt="rocket.Q logo">
+                <img src="/assets/logo.svg" alt="rocket.Q logo">
             </a>
             <div class="buttons">
-                <div class="button outlined">
+                <div class="button outlined" id="room-id" data-id="323243">
                     #323243
                     <img src="/assets/copy.svg" alt="">
                 </div>
@@ -64,11 +64,11 @@
                             </div>
                         </div>
                         <div class="actions">
-                            <a class="check" href="#">
+                            <a class="check" href="#" data-id="2">
                                 <img src="/assets/check.svg" alt="marcar como lida">
                                 Marcar como lida
                             </a>
-                            <a class="delete" href="#">
+                            <a class="delete" href="#" data-id="2">
                                 <img src="/assets/trash.svg" alt="excluir">
                                 Excluir
                             </a>
@@ -85,11 +85,11 @@
                             </div>
                         </div>
                         <div class="actions">
-                            <a class="check" href="#">
+                            <a class="check" href="#" data-id="3">
                                 <img src="/assets/check.svg" alt="marcar como lida">
                                 Marcar como lida
                             </a>
-                            <a class="delete" href="#">
+                            <a class="delete" href="#" data-id="3">
                                 <img src="/assets/trash.svg" alt="excluir">
                                 Excluir
                             </a>
@@ -107,11 +107,11 @@
                             </div>
                         </div>
                         <div class="actions">
-                            <a class="check" href="#">
+                            <a class="check" href="#" data-id="4">
                                 <img src="/assets/check.svg" alt="marcar como lida">
                                 Marcar como lida
                             </a>
-                            <a class="delete" href="#">
+                            <a class="delete" href="#" data-id="4">
                                 <img src="/assets/trash.svg" alt="excluir">
                                 Excluir
                             </a>
@@ -129,7 +129,7 @@
                             </div>
                         </div>
                         <div class="actions">
-                            <a class="delete" href="#">
+                            <a class="delete" href="#" data-id="1">
                                 <img  src="/assets/trash.svg" alt="excluir">
                                 Excluir
                             </a>
@@ -150,7 +150,7 @@
                 <input type="password" name="password" placeholder="digite a senha da sala">
                 <div class="buttons">
                     <div class="button gray cancel">Cancelar</div>
-                    <button class="red">Sim, excluir</button>
+                    <button class="">Sim, excluir</button>
                 </div>
             </form>
         </div>

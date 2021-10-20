@@ -14,7 +14,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans&family=Poppins:wght@500;700&display=swap"
         rel="stylesheet">
-    <script src="scripts/main.js" defer type="module"></script>
+    <script src="/scripts/main.js" defer type="module"></script>
     <title>room</title>
 </head>
 
@@ -25,11 +25,11 @@
                 <img src="/assets/logo.svg" alt="rocket.Q logo">
             </a>
             <div class="buttons">
-                <div class="button outlined" id="room-id" data-id="323243">
-                    #323243
+                <div class="button outlined" id="room-id" data-id="<%= roomId %>">
+                    #<%= roomId %>
                     <img src="/assets/copy.svg" alt="">
                 </div>
-                <a href="#" class="button">
+                <a href="/create-pass" class="button">
                     <img src="/assets/users-w.svg" alt="">
                     Criar sala
                 </a>
@@ -38,7 +38,7 @@
         <main>
             <section id="question-form">
                 <h2>Faça sua pergunta</h2>
-                <form action="">
+                <form action="/question/create/<%= roomId %>" method="POST">
                     <label for="question" class="sr-only">O que você quer perguntar?</label>
                     <textarea name="question" id="question" placeholder="O que você quer perguntar?"></textarea>
                     <footer>
@@ -54,87 +54,58 @@
             <section id="questions">
                 <h2 class="sr-only">Perguntas da comunidade</h2>
                 <div class="questions">
-                    <div class="question-wrapper">
-                        <div class="question-content">
-                            <div class="user">
-                                <img src="/assets/user.svg" alt="avatar">
-                            </div>
-                            <div class="question">
-                                <p>Qual a diferença entre const, var e let no js?</p>
-                            </div>
-                        </div>
-                        <div class="actions">
-                            <a class="check" href="#" data-id="2">
-                                <img src="/assets/check.svg" alt="marcar como lida">
-                                Marcar como lida
-                            </a>
-                            <a class="delete" href="#" data-id="2">
-                                <img src="/assets/trash.svg" alt="excluir">
-                                Excluir
-                            </a>
-                        </div>
-                    </div>
 
-                    <div class="question-wrapper">
-                        <div class="question-content">
-                            <div class="user">
-                                <img src="/assets/user.svg" alt="avatar">
-                            </div>
-                            <div class="question">
-                                <p>Qual a diferentã entre typescript e javascript?</p>
-                            </div>
-                        </div>
-                        <div class="actions">
-                            <a class="check" href="#" data-id="3">
-                                <img src="/assets/check.svg" alt="marcar como lida">
-                                Marcar como lida
-                            </a>
-                            <a class="delete" href="#" data-id="3">
-                                <img src="/assets/trash.svg" alt="excluir">
-                                Excluir
-                            </a>
-                        </div>
-                    </div>
+                    <% if(isNoQuestions) { %>
+                        <%- include('parts/no-question') %>
+                    <% } %>
 
-                    <div class="question-wrapper">
-                        <div class="question-content">
-                            <div class="user">
-                                <img src="/assets/user.svg" alt="avatar">
+                    <% questions.forEach(question => { %>
+
+                        <div class="question-wrapper">
+                            <div class="question-content">
+                                <div class="user">
+                                    <img src="/assets/user.svg" alt="avatar">
+                                </div>
+                                <div class="question">
+                                    <p><%= question.title %></p>
+                                </div>
                             </div>
-                            <div class="question">
-                                <p>Tenho aprendido C na faculdade. Mas queria saber qual é a melhor stack visando
-                                    desenvolvimento mobile e também web</p>
+                            <div class="actions">
+                                <a class="check" href="#" data-id="<%=question.id%>">
+                                    <img src="/assets/check.svg" alt="marcar como lida">
+                                    Marcar como lida
+                                </a>
+                                <a class="delete" href="#" data-id="<%=question.id%>">
+                                    <img src="/assets/trash.svg" alt="excluir">
+                                    Excluir
+                                </a>
                             </div>
                         </div>
-                        <div class="actions">
-                            <a class="check" href="#" data-id="4">
-                                <img src="/assets/check.svg" alt="marcar como lida">
-                                Marcar como lida
-                            </a>
-                            <a class="delete" href="#" data-id="4">
-                                <img src="/assets/trash.svg" alt="excluir">
-                                Excluir
-                            </a>
+    
+                    <% }) %>
+                    
+                    <% questionsRead.forEach(questionRead => { %>
+
+                        <div class="question-wrapper read">
+                            <div class="question-content">
+                                <div class="user">
+                                    <img src="/assets/user.svg" alt="avatar">
+                                </div>
+                                <div class="question">
+                                    <p><%= questionRead.title %></p>
+                                </div>
+                            </div>
+                            <div class="actions">
+                                <a class="delete" href="#" data-id="<%=questionRead.id%>">
+                                    <img  src="/assets/trash.svg" alt="excluir">
+                                    Excluir
+                                </a>
+                            </div>
                         </div>
-                    </div>
 
 
-                    <div class="question-wrapper read">
-                        <div class="question-content">
-                            <div class="user">
-                                <img src="/assets/user.svg" alt="avatar">
-                            </div>
-                            <div class="question">
-                                <p>O que é o nodejs?</p>
-                            </div>
-                        </div>
-                        <div class="actions">
-                            <a class="delete" href="#" data-id="1">
-                                <img  src="/assets/trash.svg" alt="excluir">
-                                Excluir
-                            </a>
-                        </div>
-                    </div>
+                    <% }) %>
+                    
                 </div>
             </section>
         </main>

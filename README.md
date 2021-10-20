@@ -6,7 +6,7 @@
  <a href="#descricao">Descrição</a> •
  <a href="#layout">Layout</a> • 
  <a href="#tecnologias">Tecnologias</a> • 
- <a href="#contribuicao">Status</a> • 
+ <a href="#status">Status</a> • 
 
 </p>
 <h2 id="descricao"> <img src="https://img.icons8.com/fluency/24/000000/laptop.png"/> Projeto </h2>
